@@ -1,5 +1,4 @@
 import React from 'react'
-import withLogLifecycle from './log-lifecycle'
 
 const ExpenseDetails = ({ expense }) => (
 	<div className='expenses-container'>
@@ -24,4 +23,4 @@ const ExpenseDetails = ({ expense }) => (
 	</div>
 )
 
-export default withLogLifecycle(ExpenseDetails)
+export default ExpenseDetails
