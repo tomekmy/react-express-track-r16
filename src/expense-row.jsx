@@ -1,7 +1,7 @@
 import React from 'react'
 
-const ExpenseRow = ({ expense, onSelect }) => (
-	<tr onClick={() => onSelect(expense)}>
+const ExpenseRow = ({ expense }) => (
+	<tr>
 		<td>{expense.category}</td>
 		<td>{expense.date}</td>
 		<td>{expense.amount}</td>
