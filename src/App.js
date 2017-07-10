@@ -35,14 +35,6 @@ class App extends React.Component {
 		})
 	}
 
-	createNew = expense => {
-		const e = Object.assign({}, expense, { id: uuid() })
-		this.setState({
-			expenses: _.concat(this.state.expenses, e),
-			showNewPopup: false
-		})
-	}
-
 	render() {
 		const { expenses, selectedExpense, showNewPopup } = this.state
 		return (
@@ -62,7 +54,6 @@ class App extends React.Component {
 						</div>
 					</div>
 					<Modal visible={showNewPopup} onDismiss={this.hideNewPopup}>
-						<AddNewExpense onSave={this.createNew} onCancel={this.hideNewPopup}/>
 					</Modal>
 				</div>
 			</div>
