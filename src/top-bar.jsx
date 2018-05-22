@@ -1,5 +1,7 @@
 import React from 'react'
 
-const TopBar = () => null
+const TopBar = () => {
+  return null
+}
 
 export default TopBar
