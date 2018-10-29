@@ -1,9 +1,11 @@
 import React from 'react'
 
-class TopBar extends React.Component {
-	render() {
-		return null
-	}
-}
+const TopBar = () => {
+  return (
+    <header className="header">
+      <h1>Awesome App:)</h1>
+    </header>
+  )
+};
 
 export default TopBar

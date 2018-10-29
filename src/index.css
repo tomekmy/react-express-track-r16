@@ -4,11 +4,30 @@ body {
 	font-family: sans-serif;
 }
 
-.top-bar {
+.wrapper {
+	display: grid;
+	grid-template-rows: 100% auto;
+	align-items: center;
+	justify-items: center;
+}
+
+.header {
 	background-color: #273242;
 	color: white;
-	height: 60px;
 	text-align: center;
+	width: 100%;
+}
+
+.header h1 {
+	padding: 15px 0;
+}
+.expenseTable {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	width: 80%;
+	margin: 15px;
+	padding: 5px;
+	border: 1px solid black;
 }
 
 .dim-screen {
