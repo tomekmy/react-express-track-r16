@@ -1,13 +1,17 @@
 import React from 'react'
 import TopBar from './top-bar'
 import Expense from './components/expense'
+import ExpenseTable from './components/ExpenseTable'
+
+import { expenses as data } from './data'
 
 class App extends React.Component {
 	render() {
 		return (
 			<div className="wrapper">
 				<TopBar />
-				<Expense />
+				<Expense expenses={data} />
+				<ExpenseTable expenses={data} />
 
 				<div className="container-fluid">
 					<div className="row fill-height">
