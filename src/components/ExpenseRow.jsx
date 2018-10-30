@@ -9,6 +9,7 @@ const ExpenseRow = props => {
 			<td>{data.date}</td>
 			<td>{data.amount + data.currency}</td>
 			<td>{data.description}</td>
+			<td><input type="checkbox" onClick={() => props.markAsPaid(data.id, !data.paid)} checked={!!data.paid} /></td>
 		</tr>
 	);
 };

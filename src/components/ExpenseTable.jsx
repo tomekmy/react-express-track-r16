@@ -21,6 +21,7 @@ class ExpenseTable extends React.Component {
 						key={element.id}
 						onSelect={this.selectElement}
 						selected={this.state.selectedID === element.id}
+						markAsPaid={this.props.markAsPaid}
 					/>
 			);
 		});
@@ -43,6 +44,9 @@ class ExpenseTable extends React.Component {
 						<td>
 							<strong>Description</strong>
 						</td>
+						<td>
+							<strong>Paid</strong>
+						</td>
 					</tr>
 					
 					{ this.generateTable(this.props.expenses) }
@@ -50,6 +54,7 @@ class ExpenseTable extends React.Component {
 						<td></td>
 						<td></td>
 						<td>{this.props.expenses.reduce((sum, element) => sum + element.amount, 0)}$</td>
+						<td></td>
 						<td></td>
 					</tr>
 				</tbody>
