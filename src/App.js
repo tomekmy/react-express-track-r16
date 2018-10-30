@@ -4,7 +4,7 @@ import Expense from './components/Expense'
 import ExpenseTable from './components/ExpenseTable'
 import {keyBy, values} from 'lodash'
 
-import { expenses as data } from './data'
+// import { expenses as data } from './data'
 
 class App extends React.Component {
 
@@ -12,9 +12,19 @@ class App extends React.Component {
 		super(props);
 
 		this.state = {
-			expenses: keyBy(data, 'id'),
+			expenses: [],
 			selectedID: ''
 		}
+	}
+
+	componentDidMount() {
+		fetch('http://192.168.1.119:8080/data')
+			.then((response) => {
+				return response.json();
+			})
+			.then((myJson) => {
+				this.setState({expenses: keyBy(myJson, 'id')});
+		});
 	}
 
 	markAsPaid = (id, value) => {

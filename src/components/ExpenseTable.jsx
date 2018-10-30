@@ -5,11 +5,17 @@ import {sumBy, filter, orderBy} from 'lodash'
 class ExpenseTable extends React.Component {
 
 	state = {
-		expense: this.props.expenses,
-		sortMethod: 'asc'
+		expense: {},
+		sortMethod: 'asc',
+		sortBy: ''
+	}
+	
+  static getDerivedStateFromProps(props, state) {
+		return {expense: orderBy(props.expenses, state.sortBy, state.sortMethod)}
 	}
 
 	sortData = (sort) => {
+		this.setState({sortBy: sort});
 		this.state.sortMethod === 'asc' ? this.setState({sortMethod: 'desc'}) : this.setState({sortMethod: 'asc'});
 		this.setState({expense: orderBy(this.props.expenses, sort, this.state.sortMethod)});
 	}
