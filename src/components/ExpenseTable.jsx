@@ -1,5 +1,6 @@
 import React from 'react'
 import ExpenseRow from './ExpenseRow'
+import {sumBy, filter} from 'lodash'
 
 class ExpenseTable extends React.Component {
 
@@ -51,10 +52,14 @@ class ExpenseTable extends React.Component {
 					
 					{ this.generateTable(this.props.expenses) }
 					<tr>
-						<td></td>
-						<td></td>
-						<td>{this.props.expenses.reduce((sum, element) => sum + element.amount, 0)}$</td>
-						<td></td>
+						<td>Total paid:</td>
+						<td>
+							{this.props.expenses.reduce((sum, element) => sum + element.amount, 0)}$
+						</td>
+						<td>Total unpaid:</td>
+						<td>
+							{sumBy(filter(this.props.expenses, 'paid'), 'amount')}$
+						</td>
 						<td></td>
 					</tr>
 				</tbody>
