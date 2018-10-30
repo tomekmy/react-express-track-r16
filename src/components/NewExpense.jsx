@@ -13,7 +13,7 @@ class NewExpense extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="newExpense">
         <div><input type="text" name="category" placeholder="Category" value={this.state.category} onChange={this.handleChange} /></div>
         <div><input type="text" name="amount" placeholder="Amount" value={this.state.amount} onChange={this.handleChange} /></div>
         <button onClick={this.props.addNewExpense}>Add new</button>
