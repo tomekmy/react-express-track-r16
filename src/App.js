@@ -3,6 +3,7 @@ import TopBar from './top-bar'
 import Expense from './components/Expense'
 import ExpenseTable from './components/ExpenseTable'
 import NewExpense from './components/NewExpense'
+import WithLogging from './components/WithLoading'
 import {keyBy, values} from 'lodash'
 
 // import { expenses as data } from './data'
@@ -73,4 +74,4 @@ class App extends React.Component {
 	}
 }
 
-export default App
+export default WithLogging(App)
