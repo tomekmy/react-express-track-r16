@@ -14,6 +14,7 @@ export const expenses = [
 		amount: 25.50,
 		currency: '$',
 		description: 'Restaurant',
+		paid: true
 	},
 	{
 		id: '212B0A26-0BFA-41D4-A2D2-BF4EEE5256EB',
