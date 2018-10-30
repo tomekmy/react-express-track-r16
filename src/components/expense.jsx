@@ -2,11 +2,17 @@ import React from 'react'
 
 const Expense = (props) => {
   return (
-    <div className="expenseTable">
-      <div>Category:</div><div>{props.expenses[0].category}</div>
-      <div>Date:</div><div>2017-07-10</div>
-      <div>Amount:</div><div>$11.25</div>
-      <div>Description:</div><div>Lunch shopping</div>
+    <div className="expenseDetails">
+      <div>Category:</div>
+      <div>Date:</div>
+      <div>Amount:</div>
+      <div>Description:</div>
+      <div>Paid:</div>
+      <div>{props.expenses.category}</div>
+      <div>{props.expenses.date}</div>
+      <div>{props.expenses.amount}</div>
+      <div>{props.expenses.description}</div>
+      <div>{String(!!props.expenses.paid)}</div>
     </div>
   )
 };

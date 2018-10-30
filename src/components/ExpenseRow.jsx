@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const ExpenseRow = props => {
 	const data = {...props.expense};
 	return (
-		<tr onClick={() => props.onSelect(data)} className={props.selected ? 'selected' : null}>
+		<tr onClick={() => props.selectElement(data)} className={props.selected ? 'selected' : null}>
 			<td>{data.category}</td>
 			<td>{data.date}</td>
 			<td>{data.amount + data.currency}</td>

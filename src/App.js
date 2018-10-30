@@ -1,6 +1,6 @@
 import React from 'react'
 import TopBar from './top-bar'
-import Expense from './components/expense'
+import Expense from './components/Expense'
 import ExpenseTable from './components/ExpenseTable'
 import {keyBy, values} from 'lodash'
 
@@ -12,7 +12,8 @@ class App extends React.Component {
 		super(props);
 
 		this.state = {
-			expenses: keyBy(data, 'id')
+			expenses: keyBy(data, 'id'),
+			selectedID: ''
 		}
 	}
 
@@ -24,15 +25,25 @@ class App extends React.Component {
 		});
 	}
 
+	selectElement = ({id}) => {
+		this.setState({
+			selectedID: id
+		});
+	}
+
 
 	render() {
+		const expense = <Expense expenses={this.state.expenses[this.state.selectedID]} />;
+
 		return (
 			<div className="wrapper">
 				<TopBar />
-				<Expense expenses={values(this.state.expenses)} />
+				{this.state.selectedID ? expense : null}
 				<ExpenseTable
 					markAsPaid={this.markAsPaid}
-				 	expenses={values(this.state.expenses)} />
+					expenses={values(this.state.expenses)}
+					selectedID={this.state.selectedID}
+					selectElement={this.selectElement} />
 
 				<div className="container-fluid">
 					<div className="row fill-height">

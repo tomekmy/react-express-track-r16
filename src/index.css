@@ -21,6 +21,17 @@ body {
 .header h1 {
 	padding: 15px 0;
 }
+
+.expenseDetails {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto;
+	width: 80%;
+	margin: 15px;
+	padding: 5px;
+	border: 1px solid black;
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.5);
+}
+
 .expenseTable {
 	width: 80%;
 	margin: 15px;
