@@ -2,6 +2,7 @@ import React from 'react'
 import TopBar from './top-bar'
 import Expense from './components/Expense'
 import ExpenseTable from './components/ExpenseTable'
+import NewExpense from './components/NewExpense'
 import {keyBy, values} from 'lodash'
 
 // import { expenses as data } from './data'
@@ -41,6 +42,11 @@ class App extends React.Component {
 		});
 	}
 
+	// TODO:
+	addNewExpense = () => {
+		console.log('addNewExpense');
+	};
+
 
 	render() {
 		const expense = <Expense expenses={this.state.expenses[this.state.selectedID]} />;
@@ -55,6 +61,7 @@ class App extends React.Component {
 					selectedID={this.state.selectedID}
 					selectElement={this.selectElement} />
 
+				<NewExpense addNewExpense={this.addNewExpense} />
 				<div className="container-fluid">
 					<div className="row fill-height">
 						<div className="col-md-8 pb-3" />
