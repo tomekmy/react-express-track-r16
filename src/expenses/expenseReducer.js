@@ -1,4 +1,5 @@
-import { events } from './expenseActions'
+import { events } from './expenseActions';
+import { keyBy } from 'lodash';
 
 export default (state={}, action) => {
   const { payload, type } = action;
@@ -9,6 +10,8 @@ export default (state={}, action) => {
         paid: payload.value
       }
     }
+    case events.FETCH_EXPENSES_FULFILLED:
+      return keyBy(payload, 'id')
     default:
       return state
   }

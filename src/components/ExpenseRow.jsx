@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
 
 const ExpenseRow = props => {
 	const data = {...props.expense};
 	return (
 		<tr onClick={() => props.selectElement(data)} className={props.selected ? 'selected' : null}>
-			<td>{data.category}</td>
+			<td><Link to={`/details/${props.expense.id}`}>{data.category}</Link></td>
 			<td>{data.date}</td>
 			<td>{data.amount + data.currency}</td>
 			<td>{data.description}</td>
