@@ -26,7 +26,11 @@ const app = combineReducers(
 
     switch(type) {
       case 'MARK_AS_PAID':
-        return {...state, [payload.id]:{...state[payload.id], paid: payload.value}}
+        return {...state, [payload.id]: {
+          ...state[payload.id],
+          paid: payload.value
+        }
+      }
       default:
         return state
     }
