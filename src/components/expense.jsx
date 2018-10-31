@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Footer } from './Footer'
 
 const Expense = (props) => {
   return (
@@ -13,6 +14,7 @@ const Expense = (props) => {
       <div>{props.expenses.amount}</div>
       <div>{props.expenses.description}</div>
       <div>{String(!!props.expenses.paid)}</div>
+      <Footer.Connected />
     </div>
   )
 };

@@ -5,7 +5,8 @@ import Expense from './components/Expense';
 import ExpenseTable from './components/ExpenseTable';
 import NewExpense from './components/NewExpense';
 import WithLogging from './components/WithLoading';
-import {values} from 'lodash';
+import { Footer } from './components/Footer';
+import { values } from 'lodash';
 
 class ExpensesApp extends React.Component {
 
@@ -43,12 +44,7 @@ class ExpensesApp extends React.Component {
 					selectElement={this.selectElement} />
 
 				<NewExpense addNewExpense={this.addNewExpense} />
-				<div className="container-fluid">
-					<div className="row fill-height">
-						<div className="col-md-8 pb-3" />
-						<div className="col-md-4" />
-					</div>
-				</div>
+				<Footer.Connected />
 			</div>
 		)
 	}
