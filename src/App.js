@@ -20,7 +20,7 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		fetch('http://192.168.1.119:8080/data')
+		fetch('http://192.168.1.118:8080/data')
 			.then((response) => {
 				return response.json();
 			})
