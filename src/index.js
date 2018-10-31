@@ -23,7 +23,6 @@ const app = combineReducers(
   {
     expenses: (state={}, action) => {
     const { payload, type } = action;
-
     switch(type) {
       case 'MARK_AS_PAID':
         return {...state, [payload.id]: {
